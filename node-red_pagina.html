@@ -58,21 +58,21 @@
   </div>
 
   <div class="sensor">
-    <span class="sensor-title">Umidade - Média (12 leituras):</span>
-    <span class="sensor-data" id="sensor-umidade-12">0</span>
-  </div>
-  <div class="sensor">
-    <span class="sensor-title">Umidade - Média (24 leituras):</span>
-    <span class="sensor-data" id="sensor-umidade-24">0</span>
-  </div>
-
-  <div class="sensor">
-    <span class="sensor-title">pH - Média (12 leituras):</span>
+    <span class="sensor-title">PH - Média (12 leituras):</span>
     <span class="sensor-data" id="sensor-ph-12">0</span>
   </div>
   <div class="sensor">
-    <span class="sensor-title">pH - Média (24 leituras):</span>
+    <span class="sensor-title">PH - Média (24 leituras):</span>
     <span class="sensor-data" id="sensor-ph-24">0</span>
+  </div>
+
+  <div class="sensor">
+    <span class="sensor-title">Oxigenio - Média (12 leituras):</span>
+    <span class="sensor-data" id="sensor-oxigenio-12">0</span>
+  </div>
+  <div class="sensor">
+    <span class="sensor-title">Oxigenio - Média (24 leituras):</span>
+    <span class="sensor-data" id="sensor-oxigenio-24">0</span>
   </div>
 </div>
 
@@ -83,8 +83,8 @@
 
     // Atualiza as médias de cada sensor no HTML
     atualizarMedias('temperatura', data.temperatura.media12, data.temperatura.media24);
-    atualizarMedias('umidade', data.umidade.media12, data.umidade.media24);
     atualizarMedias('ph', data.ph.media12, data.ph.media24);
+    atualizarMedias('oxigenio', data.oxigenio.media12, data.oxigenio.media24);
   }
 
   function atualizarMedias(sensor, media12, media24) {
