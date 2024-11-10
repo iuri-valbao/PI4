@@ -1,0 +1,597 @@
+[
+    {
+        "id": "19dbb3f62c4b8f5f",
+        "type": "tab",
+        "label": "Fluxo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f1dabc9d8713ebbe",
+        "type": "mqtt in",
+        "z": "19dbb3f62c4b8f5f",
+        "name": "temperatura",
+        "topic": "sensores/temperatura",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "85914e8e1871d393",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 40,
+        "wires": [
+            [
+                "fb0aa6fce34864b8",
+                "bf87d00c225f32a1",
+                "ac386e746492d84e"
+            ]
+        ]
+    },
+    {
+        "id": "2b4121c5730ed29b",
+        "type": "mqtt in",
+        "z": "19dbb3f62c4b8f5f",
+        "name": "ph",
+        "topic": "sensores/ph",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "85914e8e1871d393",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 240,
+        "wires": [
+            [
+                "d049a8b4a3ae2cfa",
+                "68b9c16f6924a1ce",
+                "723c65333897fc70"
+            ]
+        ]
+    },
+    {
+        "id": "66ae4454ee1f6378",
+        "type": "mqtt in",
+        "z": "19dbb3f62c4b8f5f",
+        "name": "oxigenio",
+        "topic": "sensores/oxigenio",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "85914e8e1871d393",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 440,
+        "wires": [
+            [
+                "2e0a5c6c2dd46746",
+                "3239e8a1e135960c",
+                "27efc0ec7f70662b"
+            ]
+        ]
+    },
+    {
+        "id": "fb0aa6fce34864b8",
+        "type": "ui_gauge",
+        "z": "19dbb3f62c4b8f5f",
+        "name": "",
+        "group": "fb1f742a9ce98737",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "Temp_indicator",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "40",
+        "colors": [
+            "#ff0000",
+            "#00ff00",
+            "#ff0000"
+        ],
+        "seg1": "25",
+        "seg2": "28",
+        "diff": false,
+        "className": "",
+        "x": 580,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "d049a8b4a3ae2cfa",
+        "type": "ui_gauge",
+        "z": "19dbb3f62c4b8f5f",
+        "name": "",
+        "group": "e4d9816ad84528dc",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "PH_indicator",
+        "label": "ph",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#ff0000",
+            "#00ff00",
+            "#ff0000"
+        ],
+        "seg1": "7",
+        "seg2": "9",
+        "diff": true,
+        "className": "",
+        "x": 570,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "2e0a5c6c2dd46746",
+        "type": "ui_gauge",
+        "z": "19dbb3f62c4b8f5f",
+        "name": "",
+        "group": "2bd96eddda810619",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Oxi_indicador",
+        "label": "mg/L",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "20",
+        "colors": [
+            "#ff0000",
+            "#00ff00",
+            "#00ff00"
+        ],
+        "seg1": "5",
+        "seg2": "10",
+        "diff": true,
+        "className": "",
+        "x": 580,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "bf87d00c225f32a1",
+        "type": "ui_chart",
+        "z": "19dbb3f62c4b8f5f",
+        "name": "",
+        "group": "fb1f742a9ce98737",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Temp_chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "40",
+        "removeOlder": "60",
+        "removeOlderPoints": "10",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 570,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "68b9c16f6924a1ce",
+        "type": "ui_chart",
+        "z": "19dbb3f62c4b8f5f",
+        "name": "",
+        "group": "e4d9816ad84528dc",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "PH_chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "10",
+        "removeOlder": "60",
+        "removeOlderPoints": "10",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 560,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3239e8a1e135960c",
+        "type": "ui_chart",
+        "z": "19dbb3f62c4b8f5f",
+        "name": "",
+        "group": "2bd96eddda810619",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "label": "Oxi_chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "20",
+        "removeOlder": "60",
+        "removeOlderPoints": "10",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 560,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "17d721635ba7c882",
+        "type": "http in",
+        "z": "19dbb3f62c4b8f5f",
+        "name": "",
+        "url": "/sensores",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 160,
+        "y": 600,
+        "wires": [
+            [
+                "908dae02362d1a20"
+            ]
+        ]
+    },
+    {
+        "id": "6f5b3ae266b04090",
+        "type": "http response",
+        "z": "19dbb3f62c4b8f5f",
+        "name": "sensores",
+        "statusCode": "",
+        "headers": {},
+        "x": 540,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "ac386e746492d84e",
+        "type": "function",
+        "z": "19dbb3f62c4b8f5f",
+        "name": "med_temp",
+        "func": "// Inicialize a memória de leituras do sensor se ainda não existir\nif (!context.leituras) context.leituras = [];\n\n// Adiciona a nova leitura ao array de leituras\ncontext.leituras.push(parseFloat(msg.payload));\n\n// Limite o histórico para as últimas 24 leituras\nif (context.leituras.length > 24) context.leituras.shift();\n\n// Calcula a média das últimas 12 e 24 leituras\nconst ultimas12 = context.leituras.slice(-12);\nconst ultimas24 = context.leituras.slice(-24);\n\nconst media12 = ultimas12.reduce((a, b) => a + b, 0) / ultimas12.length || 0;\nconst media24 = ultimas24.reduce((a, b) => a + b, 0) / ultimas24.length || 0;\n\n// Envia a média como payload\nmsg.payload = { media12, media24 };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 120,
+        "wires": [
+            [
+                "b08b42c10dc16549"
+            ]
+        ]
+    },
+    {
+        "id": "723c65333897fc70",
+        "type": "function",
+        "z": "19dbb3f62c4b8f5f",
+        "name": "med_ph",
+        "func": "// Inicialize a memória de leituras do sensor se ainda não existir\nif (!context.leituras) context.leituras = [];\n\n// Adiciona a nova leitura ao array de leituras\ncontext.leituras.push(parseFloat(msg.payload));\n\n// Limite o histórico para as últimas 24 leituras\nif (context.leituras.length > 24) context.leituras.shift();\n\n// Calcula a média das últimas 12 e 24 leituras\nconst ultimas12 = context.leituras.slice(-12);\nconst ultimas24 = context.leituras.slice(-24);\n\nconst media12 = ultimas12.reduce((a, b) => a + b, 0) / ultimas12.length || 0;\nconst media24 = ultimas24.reduce((a, b) => a + b, 0) / ultimas24.length || 0;\n\n// Envia a média como payload\nmsg.payload = { media12, media24 };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 300,
+        "wires": [
+            [
+                "75870cad60fd8659"
+            ]
+        ]
+    },
+    {
+        "id": "27efc0ec7f70662b",
+        "type": "function",
+        "z": "19dbb3f62c4b8f5f",
+        "name": "med_oxigenio",
+        "func": "// Inicialize a memória de leituras do sensor se ainda não existir\nif (!context.leituras) context.leituras = [];\n\n// Adiciona a nova leitura ao array de leituras\ncontext.leituras.push(parseFloat(msg.payload));\n\n// Limite o histórico para as últimas 24 leituras\nif (context.leituras.length > 24) context.leituras.shift();\n\n// Calcula a média das últimas 12 e 24 leituras\nconst ultimas12 = context.leituras.slice(-12);\nconst ultimas24 = context.leituras.slice(-24);\n\nconst media12 = ultimas12.reduce((a, b) => a + b, 0) / ultimas12.length || 0;\nconst media24 = ultimas24.reduce((a, b) => a + b, 0) / ultimas24.length || 0;\n\n// Envia a média como payload\nmsg.payload = { media12, media24 };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 500,
+        "wires": [
+            [
+                "21c9a316cc795bad"
+            ]
+        ]
+    },
+    {
+        "id": "b08b42c10dc16549",
+        "type": "change",
+        "z": "19dbb3f62c4b8f5f",
+        "name": "Var_temp",
+        "rules": [
+            {
+                "t": "set",
+                "p": "temperatura",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "75870cad60fd8659",
+        "type": "change",
+        "z": "19dbb3f62c4b8f5f",
+        "name": "Var_ph",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ph",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 350,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "21c9a316cc795bad",
+        "type": "change",
+        "z": "19dbb3f62c4b8f5f",
+        "name": "Var_oxigenio",
+        "rules": [
+            {
+                "t": "set",
+                "p": "oxigenio",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "908dae02362d1a20",
+        "type": "template",
+        "z": "19dbb3f62c4b8f5f",
+        "name": "pagina",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "<!DOCTYPE html>\n<html lang=\"pt-BR\">\n<head>\n  <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n      <title>Médias dos Sensores</title>\n        <style>\n            body {\n                  font-family: Arial, sans-serif;\n                        background-color: #f4f7fa;\n                              color: #333;\n                                    margin: 0;\n                                          padding: 0;\n                                              }\n                                                  .container {\n                                                        max-width: 800px;\n                                                              margin: 20px auto;\n                                                                    padding: 20px;\n                                                                          background-color: #e0e7f1;\n                                                                                border-radius: 8px;\n                                                                                      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\n                                                                                          }\n                                                                                              h1 {\n                                                                                                    text-align: center;\n                                                                                                          color: #2c3e50;\n                                                                                                              }\n                                                                                                                  .sensor {\n                                                                                                                        display: flex;\n                                                                                                                              justify-content: space-between;\n                                                                                                                                    align-items: center;\n                                                                                                                                          padding: 15px;\n                                                                                                                                                margin-bottom: 10px;\n                                                                                                                                                      background-color: #f0f4f9;\n                                                                                                                                                            border-radius: 5px;\n                                                                                                                                                                }\n                                                                                                                                                                    .sensor-title {\n                                                                                                                                                                          font-size: 18px;\n                                                                                                                                                                                color: #2c3e50;\n                                                                                                                                                                                    }\n                                                                                                                                                                                        .sensor-data {\n                                                                                                                                                                                              font-size: 16px;\n                                                                                                                                                                                                    color: #3498db;\n                                                                                                                                                                                                        }\n                                                                                                                                                                                                          </style>\n                                                                                                                                                                                                          </head>\n                                                                                                                                                                                                          <body>\n                                                                                                                                                                                                          \n                                                                                                                                                                                                          <div class=\"container\">\n                                                                                                                                                                                                            <h1>Médias dos Sensores</h1>\n                                                                                                                                                                                                            \n                                                                                                                                                                                                              <div class=\"sensor\">\n                                                                                                                                                                                                                  <span class=\"sensor-title\">Temperatura - Média (12 leituras):</span>\n                                                                                                                                                                                                                      <span class=\"sensor-data\" id=\"sensor-temperatura-12\">0</span>\n                                                                                                                                                                                                                        </div>\n                                                                                                                                                                                                                          <div class=\"sensor\">\n                                                                                                                                                                                                                              <span class=\"sensor-title\">Temperatura - Média (24 leituras):</span>\n                                                                                                                                                                                                                                  <span class=\"sensor-data\" id=\"sensor-temperatura-24\">0</span>\n                                                                                                                                                                                                                                    </div>\n                                                                                                                                                                                                                                    \n                                                                                                                                                                                                                                      <div class=\"sensor\">\n                                                                                                                                                                                                                                          <span class=\"sensor-title\">PH - Média (12 leituras):</span>\n                                                                                                                                                                                                                                              <span class=\"sensor-data\" id=\"sensor-ph-12\">0</span>\n                                                                                                                                                                                                                                                </div>\n                                                                                                                                                                                                                                                  <div class=\"sensor\">\n                                                                                                                                                                                                                                                      <span class=\"sensor-title\">PH - Média (24 leituras):</span>\n                                                                                                                                                                                                                                                          <span class=\"sensor-data\" id=\"sensor-ph-24\">0</span>\n                                                                                                                                                                                                                                                            </div>\n                                                                                                                                                                                                                                                            \n                                                                                                                                                                                                                                                              <div class=\"sensor\">\n                                                                                                                                                                                                                                                                  <span class=\"sensor-title\">Oxigenio - Média (12 leituras):</span>\n                                                                                                                                                                                                                                                                      <span class=\"sensor-data\" id=\"sensor-oxigenio-12\">0</span>\n                                                                                                                                                                                                                                                                        </div>\n                                                                                                                                                                                                                                                                          <div class=\"sensor\">\n                                                                                                                                                                                                                                                                              <span class=\"sensor-title\">Oxigenio - Média (24 leituras):</span>\n                                                                                                                                                                                                                                                                                  <span class=\"sensor-data\" id=\"sensor-oxigenio-24\">0</span>\n                                                                                                                                                                                                                                                                                    </div>\n                                                                                                                                                                                                                                                                                    </div>\n                                                                                                                                                                                                                                                                                    \n                                                                                                                                                                                                                                                                                    <script>\n                                                                                                                                                                                                                                                                                      async function atualizarSensores() {\n                                                                                                                                                                                                                                                                                          const response = await fetch('/dados_sensores');\n                                                                                                                                                                                                                                                                                              const data = await response.json();\n                                                                                                                                                                                                                                                                                              \n                                                                                                                                                                                                                                                                                                  // Atualiza as médias de cada sensor no HTML\n                                                                                                                                                                                                                                                                                                      atualizarMedias('temperatura', data.temperatura.media12, data.temperatura.media24);\n                                                                                                                                                                                                                                                                                                          atualizarMedias('ph', data.ph.media12, data.ph.media24);\n                                                                                                                                                                                                                                                                                                              atualizarMedias('oxigenio', data.oxigenio.media12, data.oxigenio.media24);\n                                                                                                                                                                                                                                                                                                                }\n                                                                                                                                                                                                                                                                                                                \n                                                                                                                                                                                                                                                                                                                  function atualizarMedias(sensor, media12, media24) {\n                                                                                                                                                                                                                                                                                                                      document.getElementById(`sensor-${sensor}-12`).textContent = media12.toFixed(2);\n                                                                                                                                                                                                                                                                                                                          document.getElementById(`sensor-${sensor}-24`).textContent = media24.toFixed(2);\n                                                                                                                                                                                                                                                                                                                            }\n                                                                                                                                                                                                                                                                                                                            \n                                                                                                                                                                                                                                                                                                                              // Atualiza as médias a cada 10 segundos\n                                                                                                                                                                                                                                                                                                                                setInterval(atualizarSensores, 10000);\n                                                                                                                                                                                                                                                                                                                                </script>\n                                                                                                                                                                                                                                                                                                                                \n                                                                                                                                                                                                                                                                                                                                </body>\n                                                                                                                                                                                                                                                                                                                                </html>",
+        "output": "str",
+        "x": 330,
+        "y": 600,
+        "wires": [
+            [
+                "6f5b3ae266b04090"
+            ]
+        ]
+    },
+    {
+        "id": "18fc1267dea398b7",
+        "type": "http in",
+        "z": "19dbb3f62c4b8f5f",
+        "name": "",
+        "url": "/dados_sensores",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 660,
+        "wires": [
+            [
+                "235235440f2f2327"
+            ]
+        ]
+    },
+    {
+        "id": "235235440f2f2327",
+        "type": "function",
+        "z": "19dbb3f62c4b8f5f",
+        "name": "atualiza",
+        "func": "msg.payload = {\n    temperatura: global.get('temperatura') || { media12: 0, media24: 0 },\n      oxigenio: global.get('oxigenio') || { media12: 0, media24: 0 },\n        ph: global.get('ph') || { media12: 0, media24: 0 }\n        };\n        return msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 660,
+        "wires": [
+            [
+                "c01ad292741a53bd"
+            ]
+        ]
+    },
+    {
+        "id": "c01ad292741a53bd",
+        "type": "http response",
+        "z": "19dbb3f62c4b8f5f",
+        "name": "dados_sensores",
+        "statusCode": "",
+        "headers": {},
+        "x": 580,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "85914e8e1871d393",
+        "type": "mqtt-broker",
+        "name": "Mosquito_PI4",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "fb1f742a9ce98737",
+        "type": "ui_group",
+        "name": "Temperatura",
+        "tab": "2060d89406a7aeba",
+        "order": 1,
+        "disp": true,
+        "width": "7",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "e4d9816ad84528dc",
+        "type": "ui_group",
+        "name": "PH",
+        "tab": "2060d89406a7aeba",
+        "order": 1,
+        "disp": true,
+        "width": "7",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "2bd96eddda810619",
+        "type": "ui_group",
+        "name": "Oxigenio dissolvido",
+        "tab": "2060d89406a7aeba",
+        "order": 3,
+        "disp": true,
+        "width": "7",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "2060d89406a7aeba",
+        "type": "ui_tab",
+        "name": "Leituras Aquaponia",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
