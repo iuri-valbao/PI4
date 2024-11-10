@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Médias dos Sensores</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #e0e7f1;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    .sensor {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      margin-bottom: 10px;
+      background-color: #f0f4f9;
+      border-radius: 5px;
+    }
+    .sensor-title {
+      font-size: 18px;
+      color: #2c3e50;
+    }
+    .sensor-data {
+      font-size: 16px;
+      color: #3498db;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Médias dos Sensores</h1>
+
+  <div class="sensor">
+    <span class="sensor-title">Temperatura - Média (12 leituras):</span>
+    <span class="sensor-data" id="sensor-temperatura-12">0</span>
+  </div>
+  <div class="sensor">
+    <span class="sensor-title">Temperatura - Média (24 leituras):</span>
+    <span class="sensor-data" id="sensor-temperatura-24">0</span>
+  </div>
+
+  <div class="sensor">
+    <span class="sensor-title">Umidade - Média (12 leituras):</span>
+    <span class="sensor-data" id="sensor-umidade-12">0</span>
+  </div>
+  <div class="sensor">
+    <span class="sensor-title">Umidade - Média (24 leituras):</span>
+    <span class="sensor-data" id="sensor-umidade-24">0</span>
+  </div>
+
+  <div class="sensor">
+    <span class="sensor-title">pH - Média (12 leituras):</span>
+    <span class="sensor-data" id="sensor-ph-12">0</span>
+  </div>
+  <div class="sensor">
+    <span class="sensor-title">pH - Média (24 leituras):</span>
+    <span class="sensor-data" id="sensor-ph-24">0</span>
+  </div>
+</div>
+
+<script>
+  async function atualizarSensores() {
+    const response = await fetch('/dados_sensores');
+    const data = await response.json();
+
+    // Atualiza as médias de cada sensor no HTML
+    atualizarMedias('temperatura', data.temperatura.media12, data.temperatura.media24);
+    atualizarMedias('umidade', data.umidade.media12, data.umidade.media24);
+    atualizarMedias('ph', data.ph.media12, data.ph.media24);
+  }
+
+  function atualizarMedias(sensor, media12, media24) {
+    document.getElementById(`sensor-${sensor}-12`).textContent = media12.toFixed(2);
+    document.getElementById(`sensor-${sensor}-24`).textContent = media24.toFixed(2);
+  }
+
+  // Atualiza as médias a cada 10 segundos
+  setInterval(atualizarSensores, 10000);
+</script>
+
+</body>
+</html>
